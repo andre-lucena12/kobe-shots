@@ -1,0 +1,15 @@
+artifact_uri: file:///D:/2%20-%20P%C3%93S%20GRADUA%C3%87%C3%83O/Engenharia%20de%20Machine%20Learning/kobe-shots/mlruns/111098205569835769/2143b1cd9f5b4dc293cb5208e423a76e/artifacts
+end_time: 1680471976064
+entry_point_name: ''
+experiment_id: '111098205569835769'
+lifecycle_stage: active
+run_id: 2143b1cd9f5b4dc293cb5208e423a76e
+run_name: __default__
+run_uuid: 2143b1cd9f5b4dc293cb5208e423a76e
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1680471972877
+status: 3
+tags: []
+user_id: andre

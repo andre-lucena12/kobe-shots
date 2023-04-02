@@ -2,3 +2,19 @@
 #
 # Documentation for this file format can be found in "The Data Catalog"
 # Link: https://docs.kedro.org/en/stable/data/data_catalog.html
+
+data:
+  type: pandas.CSVDataSet
+  filepath: data/01_raw/data.csv
+
+kobe_dataset:
+  type: pandas.CSVDataSet
+  filepath: data/02_intermediate/kobe_dataset.csv
+
+2fg_dataset:
+  type: pandas.ParquetDataSet
+  filepath: data/03_primary/2fg_dataset.parquet
+
+3fg_dataset:
+  type: pandas.ParquetDataSet
+  filepath: data/03_primary/3fg_dataset.parquet
