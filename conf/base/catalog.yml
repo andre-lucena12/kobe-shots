@@ -18,3 +18,19 @@ kobe_dataset:
 3fg_dataset:
   type: pandas.ParquetDataSet
   filepath: data/03_primary/3fg_dataset.parquet
+
+X_train_data:
+  type: pandas.ParquetDataSet
+  filepath: data/04_feature/X_train_data.parquet
+
+X_test_data:
+  type: pandas.ParquetDataSet
+  filepath: data/04_feature/X_test_data.parquet
+
+y_train_data:
+  type: pandas.ParquetDataSet
+  filepath: data/04_feature/y_train_data.parquet
+
+y_test_data:
+  type: pandas.ParquetDataSet
+  filepath: data/04_feature/y_test_data.parquet
