@@ -3,8 +3,10 @@ This is a boilerplate pipeline 'PreparacaoDados'
 generated using Kedro 0.18.7
 """
 
+import mlflow
 import pandas as pd
 from sklearn.model_selection import train_test_split
+from sklearn.preprocessing import StandardScaler
 
 def load_data(data):
     
@@ -39,8 +41,11 @@ def filter_data(kobe_dataset):
 
 def separe_data(data_2fg, test_size, random_state):
 
-    X = data_2fg.drop('shot_made_flag', axis=1)
+    X_without_scaler = data_2fg.drop('shot_made_flag', axis=1)
     y = data_2fg[['shot_made_flag']]
+
+    scaler = StandardScaler()
+    X = pd.DataFrame(scaler.fit_transform(X_without_scaler), columns = X_without_scaler.columns)
 
     X_train, X_test, y_train, y_test = train_test_split(X, 
                                                         y, 
@@ -48,4 +53,11 @@ def separe_data(data_2fg, test_size, random_state):
                                                         random_state = random_state)
 
     return X_train, X_test, y_train, y_test
+
+def metrics_dataset(X_train, X_test):
+
+    rows_train, cols_train = X_train.shape()
+    rows_test, cols_test = X_test.shape()
+
+    return rows_train, cols_train, rows_test, cols_test
 
