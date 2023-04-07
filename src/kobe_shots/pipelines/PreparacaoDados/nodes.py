@@ -34,10 +34,10 @@ def filter_data(kobe_dataset):
                                      'shot_distance',
                                      'shot_made_flag']]
 
-    filter_2fg = filter_2fg.dropna()
-    filter_3fg = filter_3fg.dropna()
+    filtered_2fg = filter_2fg.dropna()
+    filtered_3fg = filter_3fg.dropna()
 
-    return filter_2fg, filter_3fg
+    return filtered_2fg, filtered_3fg
 
 def separe_data(data_2fg, test_size, random_state):
 
@@ -50,7 +50,8 @@ def separe_data(data_2fg, test_size, random_state):
     X_train, X_test, y_train, y_test = train_test_split(X, 
                                                         y, 
                                                         test_size = test_size, 
-                                                        random_state = random_state)
+                                                        random_state = random_state,
+                                                        stratify = y)
 
     return X_train, X_test, y_train, y_test
 
