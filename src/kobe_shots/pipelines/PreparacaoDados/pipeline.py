@@ -23,12 +23,12 @@ def create_pipeline(**kwargs) -> Pipeline:
         node(
             func = separe_data,
             inputs = ['2fg_dataset','params:test_size','params:random_state'],
-            outputs = ['X_train_data', 'X_test_data', 'y_train_data', 'y_test_data'],
+            outputs = ['data_train', 'data_test'],
             name = 'separe_data'
         ),
         node(
             func = metrics_dataset,
-            inputs = ['X_train_data','X_test_data','y_test_data','y_train_data'],
+            inputs = ['data_train','data_test'],
             outputs = 'train_test_metrics',
             name = 'metrics_dataset'
         )

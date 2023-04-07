@@ -19,29 +19,17 @@ kobe_dataset:
   type: pandas.ParquetDataSet
   filepath: data/03_primary/3fg_dataset.parquet
 
-X_train_data:
+data_train:
   type: kedro_mlflow.io.artifacts.MlflowArtifactDataSet
   data_set:
     type: pandas.ParquetDataSet
-    filepath: data/04_feature/X_train_data.parquet
+    filepath: data/04_feature/data_train.parquet
 
-X_test_data:
+data_test:
   type: kedro_mlflow.io.artifacts.MlflowArtifactDataSet
   data_set:
     type: pandas.ParquetDataSet
-    filepath: data/04_feature/X_test_data.parquet
-
-y_train_data:
-  type: kedro_mlflow.io.artifacts.MlflowArtifactDataSet
-  data_set:
-    type: pandas.ParquetDataSet
-    filepath: data/04_feature/y_train_data.parquet
-
-y_test_data:
-  type: kedro_mlflow.io.artifacts.MlflowArtifactDataSet
-  data_set:
-    type: pandas.ParquetDataSet
-    filepath: data/04_feature/y_test_data.parquet
+    filepath: data/04_feature/data_test.parquet
 
 train_test_metrics:
   type: kedro_mlflow.io.metrics.MlflowMetricsDataSet

@@ -45,24 +45,23 @@ def separe_data(data_2fg, test_size, random_state):
     y = data_2fg[['shot_made_flag']]
 
     scaler = StandardScaler()
-    X = pd.DataFrame(scaler.fit_transform(X_without_scaler), columns = X_without_scaler.columns)
+    X = pd.DataFrame(scaler.fit_transform(X_without_scaler), 
+                    columns = X_without_scaler.columns,
+                    index = X_without_scaler.index)
+    
+    data_normalized = X.join(y)
 
-    X_train, X_test, y_train, y_test = train_test_split(X, 
-                                                        y, 
-                                                        test_size = test_size, 
-                                                        random_state = random_state,
-                                                        stratify = y)
+    data_train, data_test = train_test_split(data_normalized,
+                                            test_size = test_size, 
+                                            random_state = random_state,
+                                            stratify = data_normalized['shot_made_flag'])
 
-    return X_train, X_test, y_train, y_test
+    return data_train, data_test
 
-def metrics_dataset(X_train, X_test, y_train, y_test):
+def metrics_dataset(data_train, data_test):
 
     return{
-        'Test_rows': {'value':X_test.shape[0], 'step':1},
-        'Train_rows': {'value':X_train.shape[0], 'step':2},
-        'X_test_cols': {'value':X_test.shape[1], 'step':3},
-        'X_train_cols': {'value':X_train.shape[1], 'step':4},
-        'y_test_cols': {'value':y_test.shape[1], 'step':5},
-        'y_train_cols': {'value':y_train.shape[1], 'step':6}
+        'Test_rows': {'value':data_test.shape[0], 'step':1},
+        'Train_rows': {'value':data_train.shape[0], 'step':2}
     }
 
