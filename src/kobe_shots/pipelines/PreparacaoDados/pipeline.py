@@ -28,8 +28,8 @@ def create_pipeline(**kwargs) -> Pipeline:
         ),
         node(
             func = metrics_dataset,
-            inputs = ['X_train_data','X_test_data'],
-            outputs = ['rows_train','cols_train','rows_test','cols_test'],
+            inputs = ['X_train_data','X_test_data','y_test_data','y_train_data'],
+            outputs = 'train_test_metrics',
             name = 'metrics_dataset'
         )
     ])

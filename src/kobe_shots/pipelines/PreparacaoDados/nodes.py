@@ -54,10 +54,14 @@ def separe_data(data_2fg, test_size, random_state):
 
     return X_train, X_test, y_train, y_test
 
-def metrics_dataset(X_train, X_test):
+def metrics_dataset(X_train, X_test, y_train, y_test):
 
-    rows_train, cols_train = X_train.shape()
-    rows_test, cols_test = X_test.shape()
-
-    return rows_train, cols_train, rows_test, cols_test
+    return{
+        'Test_rows': {'value':X_test.shape[0], 'step':1},
+        'Train_rows': {'value':X_train.shape[0], 'step':2},
+        'X_test_cols': {'value':X_test.shape[1], 'step':3},
+        'X_train_cols': {'value':X_train.shape[1], 'step':4},
+        'y_test_cols': {'value':y_test.shape[1], 'step':5},
+        'y_train_cols': {'value':y_train.shape[1], 'step':6}
+    }
 

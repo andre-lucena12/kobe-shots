@@ -43,3 +43,5 @@ y_test_data:
     type: pandas.ParquetDataSet
     filepath: data/04_feature/y_test_data.parquet
 
+train_test_metrics:
+  type: kedro_mlflow.io.metrics.MlflowMetricsDataSet
