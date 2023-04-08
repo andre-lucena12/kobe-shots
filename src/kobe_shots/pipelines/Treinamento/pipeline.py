@@ -13,11 +13,11 @@ def create_pipeline(**kwargs) -> Pipeline:
             func= logistic_regression_train,
             inputs= ['data_train', 
                      'data_test', 
-                     'param:target', 
-                     'param:random_state', 
-                     'param:train_size',
-                     'param:fold_strategy',
-                     'param:fold'],
+                     'params:target', 
+                     'params:random_seed', 
+                     'params:train_size',
+                     'params:fold_strategy',
+                     'params:fold'],
             outputs= ['lr_model', 'score_logloss'],
             name= 'logistic_regression_train'
         )

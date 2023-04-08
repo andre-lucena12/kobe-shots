@@ -15,15 +15,16 @@ def logistic_regression_train(data_train, data_test, target, random_seed, train_
                 train_size= train_size,
                 fold_strategy= fold_strategy,
                 fold= fold,
-                log_experiment= True)
+                log_experiment= True,
+                experiment_name= 'lr_model_logloss')
     
     add_metric('logloss', 'Log Loss', log_loss)
 
-    lr_model = create_model('lr', fold= fold)
+    lr_model = create_model('lr', fold= fold, return_train_score= True)
 
     y_true = data_test['shot_made_flag']
     X_test = data_test.drop(columns='shot_made_flag')
-    y_pred = predict_model(lr_model, data= X_test)['Label']
+    y_pred = lr_model.predict_proba(X_test)
 
     score = log_loss(y_true, y_pred)
 

@@ -4,6 +4,7 @@ random_state: 19
 
 #Treinamento
 target: 'shot_made_flag'
+random_seed: 19
 train_size: 0.8
 fold_strategy: 'kfold'
 fold: 10
