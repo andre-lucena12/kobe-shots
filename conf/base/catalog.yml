@@ -33,3 +33,10 @@ data_test:
 
 train_test_metrics:
   type: kedro_mlflow.io.metrics.MlflowMetricsDataSet
+
+lr_model:
+  type: kedro_mlflow.io.models.MlflowModelLoggerDataSet
+  flavor: mlflow.sklearn
+
+score_logloss:
+  type: kedro_mlflow.io.metrics.MlflowMetricsDataSet
