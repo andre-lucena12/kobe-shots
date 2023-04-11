@@ -4,7 +4,7 @@ generated using Kedro 0.18.7
 """
 
 from kedro.pipeline import Pipeline, node, pipeline
-from .nodes import logistic_regression_train
+from .nodes import logistic_regression_train, best_model_train
 
 
 def create_pipeline(**kwargs) -> Pipeline:
@@ -18,7 +18,21 @@ def create_pipeline(**kwargs) -> Pipeline:
                      'params:train_size',
                      'params:fold_strategy',
                      'params:fold'],
-            outputs= ['lr_model', 'score_logloss'],
+            outputs= ['lr_model', 
+                      'metricas_lr'],
             name= 'logistic_regression_train'
+        ),
+        node(
+            func= best_model_train,
+            inputs= ['data_train', 
+                     'data_test', 
+                     'params:target', 
+                     'params:random_seed', 
+                     'params:train_size',
+                     'params:fold_strategy',
+                     'params:fold'],
+            outputs=['best_model', 
+                     'metricas_best'],
+            name= 'best_model_train'
         )
     ])

@@ -38,5 +38,12 @@ lr_model:
   type: kedro_mlflow.io.models.MlflowModelLoggerDataSet
   flavor: mlflow.sklearn
 
-score_logloss:
+metricas_lr:
+  type: kedro_mlflow.io.metrics.MlflowMetricsDataSet
+
+best_model:
+  type: kedro_mlflow.io.models.MlflowModelLoggerDataSet
+  flavor: mlflow.sklearn
+
+metricas_best:
   type: kedro_mlflow.io.metrics.MlflowMetricsDataSet
