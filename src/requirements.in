@@ -3,3 +3,6 @@ sklearn
 kedro-mlflow
 mlflow
 pycaret
+typer
+requests
+streamlit

@@ -41,16 +41,6 @@ def filter_data(kobe_dataset):
 
 def separe_data(data_2fg, test_size, random_state):
 
-    '''X_without_scaler = data_2fg.drop('shot_made_flag', axis=1)
-    y = data_2fg[['shot_made_flag']]
-
-    scaler = StandardScaler()
-    X = pd.DataFrame(scaler.fit_transform(X_without_scaler), 
-                    columns = X_without_scaler.columns,
-                    index = X_without_scaler.index)
-    
-    data_normalized = X.join(y)'''
-
     data_train, data_test = train_test_split(data_2fg,
                                             test_size = test_size, 
                                             random_state = random_state,
