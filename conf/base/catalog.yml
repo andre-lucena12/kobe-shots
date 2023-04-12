@@ -35,15 +35,21 @@ train_test_metrics:
   type: kedro_mlflow.io.metrics.MlflowMetricsDataSet
 
 lr_model:
-  type: kedro_mlflow.io.models.MlflowModelLoggerDataSet
-  flavor: mlflow.sklearn
+  type: kedro_mlflow.io.artifacts.MlflowArtifactDataSet
+  data_set:
+    type: kedro_mlflow.io.models.MlflowModelSaverDataSet
+    flavor: mlflow.sklearn
+    filepath: data/06_models/lr_model
 
 metricas_lr:
   type: kedro_mlflow.io.metrics.MlflowMetricsDataSet
 
 best_model:
-  type: kedro_mlflow.io.models.MlflowModelLoggerDataSet
-  flavor: mlflow.sklearn
+  type: kedro_mlflow.io.artifacts.MlflowArtifactDataSet
+  data_set:
+    type: kedro_mlflow.io.models.MlflowModelSaverDataSet
+    flavor: mlflow.sklearn
+    filepath: data/06_models/best_model
 
 metricas_best:
   type: kedro_mlflow.io.metrics.MlflowMetricsDataSet
