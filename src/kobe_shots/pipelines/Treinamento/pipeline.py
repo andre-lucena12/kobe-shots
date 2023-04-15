@@ -19,7 +19,8 @@ def create_pipeline(**kwargs) -> Pipeline:
                      'params:fold_strategy',
                      'params:fold'],
             outputs= ['lr_model', 
-                      'metricas_lr'],
+                      'metricas_lr',
+                      'metricas_df'],
             name= 'logistic_regression_train'
         ),
         node(
@@ -32,7 +33,8 @@ def create_pipeline(**kwargs) -> Pipeline:
                      'params:fold_strategy',
                      'params:fold'],
             outputs=['best_model', 
-                     'metricas_best'],
+                     'metricas_best',
+                     'metricas_best_df'],
             name= 'best_model_train'
         )
     ])

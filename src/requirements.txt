@@ -221,6 +221,7 @@ matplotlib==3.7.1
     #   pycaret
     #   pyod
     #   scikit-plot
+    #   seaborn
     #   yellowbrick
 matplotlib-inline==0.1.6
     # via
@@ -266,6 +267,7 @@ numpy==1.23.5
     #   pyod
     #   scikit-learn
     #   scipy
+    #   seaborn
     #   shap
     #   sktime
     #   statsmodels
@@ -300,6 +302,7 @@ pandas==1.5.3
     #   plotly-resampler
     #   pmdarima
     #   pycaret
+    #   seaborn
     #   shap
     #   sktime
     #   statsmodels
@@ -457,6 +460,8 @@ scipy==1.10.1
     #   statsmodels
     #   tbats
     #   yellowbrick
+seaborn==0.12.2
+    # via -r requirements.in
 shap==0.41.0
     # via mlflow
 six==1.16.0

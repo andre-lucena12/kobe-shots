@@ -44,6 +44,10 @@ lr_model:
 metricas_lr:
   type: kedro_mlflow.io.metrics.MlflowMetricsDataSet
 
+metricas_df:
+  type: pandas.ParquetDataSet
+  filepath: data/08_reporting/metricas_lr_model
+
 best_model:
   type: kedro_mlflow.io.artifacts.MlflowArtifactDataSet
   data_set:
@@ -53,3 +57,8 @@ best_model:
 
 metricas_best:
   type: kedro_mlflow.io.metrics.MlflowMetricsDataSet
+
+metricas_best_df:
+  type: pandas.ParquetDataSet
+  filepath: data/08_reporting/metricas_best_model
+    
